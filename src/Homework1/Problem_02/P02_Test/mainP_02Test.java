@@ -1,5 +1,7 @@
-package Homework1.Problem_02;
+package Homework1.Problem_02.P02_Test;
 
+import Homework1.Problem_02.ArrayIsEmptyException;
+import Homework1.Problem_02.P2Utility;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -28,12 +30,12 @@ class mainP_02Test {
     @Test
     public void shouldGetArrayIsEmptyException() {
         List<Integer> emptyNumbers = new ArrayList<>();
-        assertThrows(ArrayIsEmptyException.class, () -> p2Utility.getLeastAppearedDigits(emptyNumbers), "Array is Empty, should throw");
+        Assertions.assertThrows(ArrayIsEmptyException.class, () -> p2Utility.getLeastAppearedDigits(emptyNumbers), "Array is Empty, should throw");
     }
 
     @Test
     public void shouldGetIllegalArgumentExceptionForNullList() {
         List<Integer> nullList = null;
-        Assertions.assertThrows(IllegalArgumentException.class, () -> p2Utility.getMostAppearedDigits(nullList), "Arrays is NULL should throw");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> p2Utility.getMostAppearedDigits(nullList), "Arrays is NULL, should throw");
     }
 }
